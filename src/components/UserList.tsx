@@ -15,7 +15,6 @@ export const UsersList: React.FC = () => {
 
     const ITEMS_PER_PAGE = 3;
 
-    // Arama veya sayfa değiştiğinde veriyi getir
     useEffect(() => {
         dispatch(fetchUsers({
             page: currentPage,
