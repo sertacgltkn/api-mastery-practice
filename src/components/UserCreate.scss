@@ -1,0 +1,94 @@
+.user-create-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+
+    h1 {
+        font-size: 24px;
+        color: #2c3e50;
+        margin-bottom: 25px;
+        font-weight: 600;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #34495e;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1.5px solid #e0e6ed;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: all 0.2s ease;
+            outline: none;
+
+            &:focus {
+                border-color: #3498db;
+                box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+            }
+
+            &.error {
+                border-color: #e74c3c;
+            }
+        }
+
+        .error-text {
+            color: #e74c3c;
+            font-size: 13px;
+            margin-top: 5px;
+            font-weight: 400;
+        }
+    }
+
+    .button-group {
+        display: flex;
+        gap: 12px;
+        margin-top: 30px;
+
+        button {
+            flex: 1;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+
+            &.submit-btn {
+                background: #3498db;
+                color: white;
+
+                &:hover:not(:disabled) {
+                    background: #2980b9;
+                }
+
+                &:disabled {
+                    background: #bdc3c7;
+                    cursor: not-allowed;
+                }
+            }
+
+            &.back-btn {
+                background: #f8f9fa;
+                color: #7f8c8d;
+                border: 1px solid #e0e6ed;
+
+                &:hover {
+                    background: #ecf0f1;
+                    color: #2c3e50;
+                }
+            }
+        }
+    }
+}
