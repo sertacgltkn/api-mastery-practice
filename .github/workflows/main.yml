@@ -1,0 +1,26 @@
+name: Daily Contribution Bot
+
+on:
+  schedule:
+    # Bu ayar her akşam Türkiye saatiyle yaklaşık 19:05 - 19:15 arası çalışır
+    - cron: '10 16 * * *' 
+  workflow_dispatch: # İstediğin zaman manuel çalıştırman için bu buton da kalsın
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Update activity log
+        run: |
+          echo "Last contribution: $(date)" > daily_log.txt
+
+      - name: Commit and Push
+        run: |
+          git config --local user.email "sertacgltkn@gmail.com"
+          git config --local user.name "sertacgltkn"
+          git add daily_log.txt
+          git commit -m "chore: daily activity update $(date)"
+          git push
